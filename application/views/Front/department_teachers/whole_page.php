@@ -37,7 +37,7 @@
                         ?>">
                             <?php echo $this->lang->line("ana_sehife"); ?>
                         </a> /</li>
-                    <li>  <?php echo $this->lang->line("umumi_melumat"); ?></li>
+                    <li>  <?php echo $this->lang->line("muellimler"); ?></li>
                 </ul>
             </div>
         </div>
