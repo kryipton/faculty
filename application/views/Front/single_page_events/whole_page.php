@@ -29,24 +29,6 @@ if($event){ ?>
 
                         ?></h2>
 
-
-
-                    <!--                    <ul class="breadcrumbs">-->
-                    <!--                        <li><a href="--><?php //echo base_url('Home')?><!--">Ana Səhifə</a> /</li>-->
-                    <!--                        <li><a href="--><?php //echo base_url('Actions')?><!--">Tədbirlər</a> /</li>-->
-                    <!--                        <li>--><?php
-                    //
-                    //                            if ($this->session->userdata("dil") == "az"){
-                    //                                echo substr($event['event_title_az'], 0,120);
-                    //                            }elseif ($this->session->userdata("dil") == "en"){
-                    //                                echo substr($event['event_title_en'], 0,120);
-                    //                            }elseif ($this->session->userdata("dil") == "ru"){
-                    //                                echo substr($event['event_title_ru'], 0,120);
-                    //                            }
-                    //
-                    //                             ?><!--</li>-->
-                    <!--                    </ul>-->
-
                     <ul class="breadcrumbs">
                         <li><a href="<?php
 
@@ -60,7 +42,29 @@ if($event){ ?>
                             }
 
                             ?>"><?php echo $this->lang->line("ana_sehife"); ?></a> /</li>
-                        <li><?php echo $this->lang->line("haqqimizda"); ?></li>
+                        <li><a href="<?php
+
+                            if ($this->session->userdata("dil") == "az"){
+                                echo base_url("az/Actions");
+                            }elseif ($this->session->userdata("dil") == "en"){
+                                echo base_url("en/Actions");
+                            }elseif ($this->session->userdata("dil") == "ru"){
+                                echo base_url("ru/Actions");
+                            }
+
+                            ?>"><?php echo $this->lang->line("tedbirler"); ?></a> /
+                        </li>
+                        <li><?php
+
+                            if ($this->session->userdata("dil") == "az"){
+                                echo substr($event['event_title_az'], 0,100);
+                            }elseif ($this->session->userdata("dil") == "en"){
+                                echo substr($event['event_title_en'], 0,100);
+                            }elseif ($this->session->userdata("dil") == "ru"){
+                                echo substr($event['event_title_ru'], 0,100 );
+                            }
+
+                            ?></li>
                     </ul>
 
                 </div>
