@@ -5,7 +5,7 @@
 <div class="content_wrapper" style="margin-bottom: 150px;">
 
     <div class="breadcrumb_wrap" >
-        <div class="breadcrumb_wrap_inner" style="background-image: url('../public/images/top1.jpg');height: 250px;">
+        <div class="breadcrumb_wrap_inner" style="background-image: url('<?php echo base_url("public/images/top1.jpg")?>');height: 250px;">
             <div class="container">
                 <ul class="breadcrumbs">
                     <li><a href="<?php

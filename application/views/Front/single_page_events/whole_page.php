@@ -14,7 +14,7 @@ if($event){ ?>
     <div class="content_wrapper">
 
         <div class="breadcrumb_wrap" data-stellar-background-ratio="0.3"
-             style="background: url(images/slider_group_in_campus.jpg); background-attachment: fixed; background-position: 50% 50%;">
+             style="background: url('<?php echo base_url("public/images/top1.jpg")?>'); background-attachment: fixed; background-position: 50% 50%;">
             <div class="breadcrumb_wrap_inner">
                 <div class="container">
                     <h2 style="text-align: right;color: white"><?php
