@@ -73,9 +73,12 @@ $route['(:any)/Labaratory'] = 'Leyli/labaratory';
 
 //Xeberler hissesi
 $route['(:any)/News'] = 'Leyli/news';
+$route['(:any)/News/(.*)'] = 'Leyli/news/$1';
 
 //Tedbirler hissesi
 $route['(:any)/Actions'] = 'Leyli/actions';
+$route['(:any)/Actions/(.*)'] = 'Leyli/actions/$1';
+
 
 //Bakalavr hissesi
 $route['(:any)/Bachelor'] = 'Leyli/bachelor';

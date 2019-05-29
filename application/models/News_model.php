@@ -28,4 +28,22 @@ class News_model extends CI_Model{
        return $this->db->order_by('news_id','DESC')->limit(4)->get('news_db')->result_array();
     }
 
+
+    public function get_last_news_all(){
+        return $this->db->order_by('news_id','DESC')->get('news_db')->result_array();
+    }
+
+    public function get_news_pagination($limit, $count){
+        return $this->db->limit($limit, $count)->get('news_db')->result_array();
+    }
+
+    public function get_count_news_pagination(){
+        return $this->db->count_all('news_db');
+    }
+
+
+
+
+
+
 }

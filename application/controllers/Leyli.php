@@ -90,8 +90,21 @@ class Leyli extends CI_Controller {
         $data['all_categories_of_department']   = $this->Mecnun_model->get_all_department_categories();
         $data['logo']   = $this->Mecnun_model->get_logo_and_title();
 
-        $data['last_events'] = $this->Events_model->events();
+        $this->load->library('pagination');
 
+        $config["base_url"]  = base_url($this->uri->segment(1) . "/Actions");
+        $config["total_rows"] = $this->Events_model->get_count_events_pagination();
+        $config["uri_segment"] = 3;
+        $config["per_page"] = 6;
+        $config["first_link"] = "<<";
+        $config["last_link"] = ">>";
+
+        $this->pagination->initialize($config);
+
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        $data['last_events']   = $this->Events_model->get_events_pagination($config["per_page"], $page);
+        $data['links']  = $this->pagination->create_links();
         $this->load->view('Front/actions/whole_page', $data);
     }
 
@@ -99,9 +112,25 @@ class Leyli extends CI_Controller {
         $data['all_categories_of_department']   = $this->Mecnun_model->get_all_department_categories();
         $data['logo']   = $this->Mecnun_model->get_logo_and_title();
 
-        $data['last_news']   = $this->News_model->get_last_news();
+        $this->load->library('pagination');
 
+        $config["base_url"]  = base_url($this->uri->segment(1) . "/News");
+        $config["total_rows"] = $this->News_model->get_count_news_pagination();
+        $config["uri_segment"] = 3;
+        $config["per_page"] = 6;
+        $config["first_link"] = "<<";
+        $config["last_link"] = ">>";
+
+        $this->pagination->initialize($config);
+
+
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        $data['last_news']   = $this->News_model->get_news_pagination($config["per_page"], $page);
+        $data['links']  = $this->pagination->create_links();
         $this->load->view('Front/news/whole_page', $data);
+
+
     }
 
     public function single_page_news($id){

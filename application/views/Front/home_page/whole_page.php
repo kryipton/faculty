@@ -21,7 +21,6 @@
 
 
 
-
                                 <?php
                                 foreach($all_slide as $all_slide){ ?>
                                     <li data-transition="slideoverhorizontal" data-slotamount="default"
